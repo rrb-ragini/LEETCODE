@@ -1,16 +1,20 @@
 class Solution {
 public:
     int numRescueBoats(vector<int>& people, int limit) {
+        ios::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+        
         sort(people.begin(), people.end());
         int n = people.size();
         
-        int itr1 = 0;
-        int itr2 = n-1;
+        auto itr1 = people.begin();
+        auto itr2 = people.end()-1;
         
         int count = 0; 
         
         while(itr1<=itr2){
-            if(people[itr2] + people[itr1] <= limit){
+            if(*itr2 + *itr1 <= limit){
                 count++;
                 itr2--;
                 itr1++;
