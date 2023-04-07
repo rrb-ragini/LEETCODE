@@ -3,12 +3,8 @@ class Solution {
     vector<vector<int>>g;
     vector<vector<bool>>visited;
     long long count = 0;
-    // int countA = 0; 
-    // int countB = 0;
-    // int countC = 0; 
-    // int countD = 0;
     int res = 0; 
-    long long section = 0; 
+    int section = 0; 
     
     int dfs(int row, int col){
         if(row<0 or col<0) return 0;
@@ -17,20 +13,17 @@ class Solution {
         
         visited[row][col] = true; //visited criteria
         
-        // countA = dfs(row+1, col);
-        // countB = dfs(row-1, col);
-        // countC = dfs(row, col+1);
-        // countD = dfs(row, col-1);
-        // section += countA+countB+countC+countD;
-        
         section = min(dfs(row+1, col), min(dfs(row-1, col), min(dfs(row, col+1), dfs(row, col-1))));
         if(section==0) res=0; else res++;
-        // return min(section, res);
         return res;
     }
     
 public:
     int numEnclaves(vector<vector<int>>& grid) {
+        ios::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+        
         m = grid.size();
         n = grid[0].size();
         g = grid; 
