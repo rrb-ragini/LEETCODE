@@ -12,6 +12,5 @@ public:
         }
         if(pq.empty()) return 0;
         return pq.top();
-        
     }
 };
