@@ -28,8 +28,8 @@ public:
         
         int l = 0, r = m - 1; //r = 2
 
-        while(r < n ){  
-            cout << r << endl;
+        while(l <= n - m){  
+            cout << l << endl;
             if(sCount == pCount) result.push_back(l);
                         
             sCount[s[l] - 'a']--; 
