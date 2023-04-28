@@ -1,6 +1,6 @@
 class Solution {
     int n, m;
-    vector<bool>visited;
+    bool *visited = NULL;
     vector<string> strs;
     
     bool isSimilar(int i, int j){
@@ -24,7 +24,7 @@ public:
         strs = str;
         n = strs.size();
         m = strs[0].size();
-        visited = vector<bool>(n, false);
+        visited = new bool[n]{};
         int res = 0;
         
         //dfs
